@@ -1,0 +1,37 @@
+!!!5
+%html{class:"no-js", lang:"es"}
+%head
+  %meta{charset:"utf-8"}
+  %meta{name:"description", content:"Veni al mejor restaurante de la ciudad"}
+  %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+  %link{href:"https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" ,rel:"stylesheet"}
+  %link{rel:"stylesheet", href:"css/normalize.css"}
+  %link{rel:"stylesheet", href:"css/bootstrap.css"}
+  %link{rel:"stylesheet", href:"css/style.css"}
+  %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+%body
+  ="<!--[f lt IE 9]>"
+  %p{class:"browserupgrade"}
+    Estas usando un navegador 
+    %strong desactualizado.
+    Por favor 
+    %a{href:"http://browsehappy.com/"}
+      actualiza tu navagador
+    para una mejor experiencia
+  ="<![endif]-->"
+  .content.relative
+    .video-container
+      %video{autoplay:"true",loop:"true", width:"1920", height:"1080", poster:"./videos/images/bbq.jpg"}
+        %source{src:"videos/mp4/bbq.mp4", type:"video/mp4"}
+        %source{src:"videos/webm/bbq.webm", type:"video/webm"}
+      .title.relative.center-title
+        %img.relative.center-logo{src:"imgs/logo2.png" ,width:300} 
+        %h1.no-margin.white-text.dancing-script.font-title.bold Restaurant
+        %p#is-open.white-text.no-margin{style:"font-size: 1em;"} Abierto ahora
+    %nav.fixed.top.right.white-text#navigation.navigation
+      %ul.list-inline
+        %li Inicio
+        %li Ménu
+        %li Gáleria
+        %li Contacto
+        %li Cómo llegar
