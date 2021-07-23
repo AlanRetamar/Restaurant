@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es"></html>
+<html class="no-js" lang="es">
 <head>
 <meta charset="utf-8">
 <meta content="Veni al mejor restaurante de la ciudad" name="description">
 <meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="6" data="imageCounter">
+<link href="imgs/logo2.ico" rel="shortcut icon" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&amp;display=swap" rel="stylesheet">
 <link href="css/normalize.css" rel="stylesheet">
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -22,26 +24,191 @@ actualiza tu navagador
 para una mejor experiencia
 </p>
 <![endif]-->
-<div class="content relative">
-<div class="video-container">
+<main class="content relative">
+<section class="video-container">
 <video autoplay="true" height="1080" loop="true" poster="./videos/images/bbq.jpg" width="1920">
 <source src="videos/mp4/bbq.mp4" type="video/mp4">
 <source src="videos/webm/bbq.webm" type="video/webm">
 </video>
-<div class="title relative center-title">
-<img class="relative center-logo" src="imgs/logo2.png" width="300">
+<div class="title relative vertical-center-title" id="home">
+<img class="relative vertical-center-logo" src="imgs/logo2.png" width="300">
 <h1 class="no-margin white-text dancing-script font-title bold">Restaurant</h1>
-<p class="white-text no-margin" id="is-open" style="font-size: 1em;">Abierto ahora</p>
+<p class="white-text no-margin text-center" id="is-open" style="font-size: 1em;">
+<i class="glyphicon glyphicon-time">
+Abierto ahora
+</i>
+</p>
 </div>
-</div>
-<nav class="fixed top right white-text navigation" id="navigation">
+</section>
+<nav class="fixed top right navigation" id="navigation">
 <ul class="list-inline">
-<li>Inicio</li>
-<li>Ménu</li>
-<li>Gáleria</li>
-<li>Contacto</li>
-<li>Cómo llegar</li>
+<li>
+<a class="menu-link" href="#home">Inicio</a>
+</li>
+<li>
+<a class="menu-link" href="#menu">Ménu</a>
+</li>
+<li>
+<a class="menu-link" href="#gallery">Gáleria</a>
+</li>
+<li>
+<a class="menu-link" href="#contact">Contacto</a>
+</li>
+<li>
+<a class="menu-link" href="#location">Cómo llegar</a>
+</li>
+</ul>
+</nav>
+<section class="absolute white-text full-width black large-padding" id="description">
+<div class="row vertical-align text-center">
+<i class="glyphicon glyphicon-menu-hamburger font-subtitle glyphicon-remove" id="hamburger-menu"></i>
+<div class="col-xs-7 col-sm-6 medium">
+Vení a disfrutar comida preparada por artistas
+</div>
+<div class="col-xs hidden" id="sticky-navigation">
+<nav class="navigation" id="responsive-nav">
+<ul class="list-inline">
+<li>
+<a class="menu-link" href="#home">Inicio</a>
+</li>
+<li>
+<a class="menu-link" href="#menu">Ménu</a>
+</li>
+<li>
+<a class="menu-link" href="#gallery">Gáleria</a>
+</li>
+<li>
+<a class="menu-link" href="#contact">Contacto</a>
+</li>
+<li>
+<a class="menu-link" href="#location">Cómo llegar</a>
+</li>
 </ul>
 </nav>
 </div>
+</div>
+</section>
+<section class="text-center relative" id="menu">
+<div class="absolute white dancing-script font-title" id="menu-title">Menú</div>
+<div class="row">
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/pizza-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Pizzas</h3>
+<p>70.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/hamburger-combo-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Combo Hamburgesa</h3>
+<p>70.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/steak-with-vegetables-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Bife con Verduras</h3>
+<p>60.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/roast-beef-with-potato-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Roast Beef con Papas</h3>
+<p>60.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/club-sanwich-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Club Sanwich</h3>
+<p>30.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/hot-cakes-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Hot Cakes</h3>
+<p>40.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/pancake-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Panqueques</h3>
+<p>40.00 USD</p>
+</div>
+</div>
+<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 food" style="background-image:url(imgs/food/ice-cream-thumb.jpg)">
+<div class="screen white-text full-height">
+<h3 class="dancing-script font-subtitle">Helados</h3>
+<p>30.00 USD</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="inner">
+<div class="image" style="background-image:url(imgs/food/hamburger.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/hot-cakes.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/ice-cream.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/pancake.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/peperoni-pizza.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/roast-beef-and-vegetables.jpg);"></div>
+<div class="image" style="background-image:url(imgs/food/steak.jpg);"></div>
+</div>
+</section>
+<div class="container segoe-ui">
+<div class="card relative black-text white text-center medium">
+<h3 class="medium slim">
+En
+<strong class="dancing-script medium">Restaurant</strong>
+cocinar no es una profesion, no es una tecnica, es un
+<strong class="dancing-script medium">arte</strong>
+</h3>
+<p class="top-space">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex illo, iste, consectetur commodi assumenda voluptatem adipisci ipsum modi soluta ab nam repellat quisquam deserunt. Aperiam molestiae debitis suscipit explicabo mollitia?
+<strong class="dancing-script medium">Coco - Chef</strong>
+</p>
+<div class="large-padding medium black white-text">
+Tambien puedes acceder a este sitio sin conexion a internet
+</div>
+</div>
+</div>
+<section class="black full-height" id="contact">
+<div class="container full-height">
+<p class="text-center font-subtitle white-text" id="info-contact" style="margin-top:200px;">Presiona enter para llenar los campos y enviar el formulario</p>
+<form action="https://formspree.io/f/xdoygnrr" class="step-form" id="contact_form" method="POST" style="margin-top:20px;">
+<div class="content-form">
+<div class="content-path-steps">
+<div class="col-xs-12 col-sm-2 col-md-1">
+<div class="path-step active"></div>
+<div class="path-step"></div>
+<div class="path-step"></div>
+</div>
+</div>
+<div class="content-inputs">
+<fieldset class="step active">
+<input class="input" id="email" name="email" placeholder="Coloca tu email" required type="email">
+</fieldset>
+<fieldset class="step">
+<input class="input" id="name" name="name" placeholder="Coloca tu nombre" required type="text">
+</fieldset>
+<fieldset class="step">
+<textarea class="input text-center" id="body" name="body" placeholder="Escribenos un comentario..." required></textarea>
+</fieldset>
+</div>
+</div>
+</form>
+</div>
+</section>
+<div class="middle-height black"></div>
+<div id="location">
+<div id="map"></div>
+<div class="black large-padding white-text text-center medium" id="message">
+Prueba
+</div>
+</div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+window.$ || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs0WtKiZgMTRLXRyXTWb_7M04keQaLtSU"></script>
+<script src="dist/app.js" type="text/javascript"></script>
 </body>
+</html>

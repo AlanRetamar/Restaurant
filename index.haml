@@ -1,37 +1,110 @@
+-gallery_images= ['hamburger','hot-cakes','ice-cream','pancake','peperoni-pizza','roast-beef-and-vegetables','steak']
 !!!5
 %html{class:"no-js", lang:"es"}
-%head
-  %meta{charset:"utf-8"}
-  %meta{name:"description", content:"Veni al mejor restaurante de la ciudad"}
-  %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
-  %link{href:"https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" ,rel:"stylesheet"}
-  %link{rel:"stylesheet", href:"css/normalize.css"}
-  %link{rel:"stylesheet", href:"css/bootstrap.css"}
-  %link{rel:"stylesheet", href:"css/style.css"}
-  %script{src:"js/vendor/modernizr-2.8.3.min.js"}
-%body
-  ="<!--[f lt IE 9]>"
-  %p{class:"browserupgrade"}
-    Estas usando un navegador 
-    %strong desactualizado.
-    Por favor 
-    %a{href:"http://browsehappy.com/"}
-      actualiza tu navagador
-    para una mejor experiencia
-  ="<![endif]-->"
-  .content.relative
-    .video-container
-      %video{autoplay:"true",loop:"true", width:"1920", height:"1080", poster:"./videos/images/bbq.jpg"}
-        %source{src:"videos/mp4/bbq.mp4", type:"video/mp4"}
-        %source{src:"videos/webm/bbq.webm", type:"video/webm"}
-      .title.relative.center-title
-        %img.relative.center-logo{src:"imgs/logo2.png" ,width:300} 
-        %h1.no-margin.white-text.dancing-script.font-title.bold Restaurant
-        %p#is-open.white-text.no-margin{style:"font-size: 1em;"} Abierto ahora
-    %nav.fixed.top.right.white-text#navigation.navigation
-      %ul.list-inline
-        %li Inicio
-        %li Ménu
-        %li Gáleria
-        %li Contacto
-        %li Cómo llegar
+  %head
+    %meta{charset:"utf-8"}
+    %meta{name:"description", content:"Veni al mejor restaurante de la ciudad"}
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
+    %meta{:data-name =>"imageCounter", content:"#{gallery_images.size-1}"}
+    %link{rel:"shortcut icon", href:"imgs/logo2.ico", type:"image/x-icon"}
+    %link{href:"https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" ,rel:"stylesheet"}
+    %link{rel:"stylesheet", href:"css/normalize.css"}
+    %link{rel:"stylesheet", href:"css/bootstrap.css"}
+    %link{rel:"stylesheet", href:"css/style.css"}
+    %script{src:"js/vendor/modernizr-2.8.3.min.js"}
+  %body
+    ="<!--[f lt IE 9]>"
+    %p{class:"browserupgrade"}
+      Estas usando un navegador 
+      %strong desactualizado.
+      Por favor 
+      %a{href:"http://browsehappy.com/"}
+        actualiza tu navagador
+      para una mejor experiencia
+    ="<![endif]-->"
+    %main.content.relative
+      %section.video-container
+        %video{autoplay:"true",loop:"true", width:"1920", height:"1080", poster:"./videos/images/bbq.jpg"}
+          %source{src:"videos/mp4/bbq.mp4", type:"video/mp4"}
+          %source{src:"videos/webm/bbq.webm", type:"video/webm"}
+        .title.relative.vertical-center-title#home
+          %img.relative.vertical-center-logo{src:"imgs/logo2.png" ,width:300} 
+          %h1.no-margin.white-text.dancing-script.font-title.bold Restaurant
+          %p#is-open.white-text.no-margin.text-center{style:"font-size: 1em;"} 
+            %i.glyphicon.glyphicon-time
+              Abierto ahora
+      %nav.fixed.top.right.navigation#navigation
+        -menu = [{title: 'Inicio', link:'#home'}, {title:'Ménu', link:'#menu'}, {title:'Gáleria', link:'#gallery'}, {title:'Contacto', link:'#contact'}, {title:'Cómo llegar', link:'#location'}]
+        %ul.list-inline
+          -menu.each do |item|
+            %li
+              %a.menu-link{href:item[:link]}=item[:title]
+      %section#description.absolute.white-text.full-width.black.large-padding
+        .row.vertical-align.text-center
+          %i#hamburger-menu.glyphicon.glyphicon-menu-hamburger.font-subtitle.glyphicon-remove
+          .col-xs-7.col-sm-6.medium
+            Vení a disfrutar comida preparada por artistas
+          .col-xs.hidden#sticky-navigation
+            %nav.navigation#responsive-nav
+              %ul.list-inline
+                -menu.each do |item|
+                  %li
+                    %a.menu-link{href:item[:link]}=item[:title]
+      %section.text-center.relative#menu
+        .absolute#menu-title.white.dancing-script.font-title Menú 
+        -menu_photos = [{name:'Pizzas',pricing:'70.00', image:'pizza'},{name:'Combo Hamburgesa',pricing:'70.00', image:'hamburger-combo'},{name:'Bife con Verduras',pricing:'60.00', image:'steak-with-vegetables'},{name:'Roast Beef con Papas',pricing:'60.00', image:'roast-beef-with-potato'},{name:'Club Sanwich',pricing:'30.00', image:'club-sanwich'},{name:'Hot Cakes',pricing:'40.00', image:'hot-cakes'},{name:'Panqueques',pricing:'40.00', image:'pancake'},{name:'Helados',pricing:'30.00', image:'ice-cream'}]
+        .row
+          -menu_photos.each do |photo|
+            .col-md-4.col-lg-3.col-sm-6.col-xs-12.food{style:"background-image:url(imgs/food/#{photo[:image]}-thumb.jpg)"}
+              .screen.white-text.full-height
+                %h3.dancing-script.font-subtitle= photo[:name]
+                %p= photo[:pricing] + ' USD'
+      %section#gallery
+        .inner
+          -gallery_images.each do |image|
+            .image{style:"background-image:url(imgs/food/#{image}.jpg);"}
+      .container.segoe-ui
+        .card.relative.black-text.white.text-center.medium
+          %h3.medium.slim
+            En
+            %strong.dancing-script.medium Restaurant
+            cocinar no es una profesion, no es una tecnica, es un
+            %strong.dancing-script.medium arte
+          %p.top-space
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex illo, iste, consectetur commodi assumenda voluptatem adipisci ipsum modi soluta ab nam repellat quisquam deserunt. Aperiam molestiae debitis suscipit explicabo mollitia?
+            %strong.dancing-script.medium Coco - Chef
+          .large-padding.medium.black.white-text
+            Tambien puedes acceder a este sitio sin conexion a internet  
+      %section#contact.black.full-height
+        .container.full-height
+          %p.text-center.font-subtitle.white-text#info-contact{style:"margin-top:200px;"} Presiona enter para llenar los campos y enviar el formulario
+          %form.step-form{ action:"https://formspree.io/f/xdoygnrr", method:"POST", id:"contact_form",style:"margin-top:20px;"}
+            .content-form
+              .content-path-steps
+                .col-xs-12.col-sm-2.col-md-1
+                  -3. times do |i|
+                    -if  i==0
+                      .path-step.active
+                    -else
+                      .path-step
+              .content-inputs
+                %fieldset.step.active
+                  %input{type:"email", id:"email", name:"email", placeholder:"Coloca tu email", class:'input', required:true}
+                %fieldset.step
+                  %input{type:"text", id:"name",name:"name", placeholder:"Coloca tu nombre", class:'input', required:true}
+                %fieldset.step
+                  %textarea.text-center{name:"body", id:"body", placeholder:"Escribenos un comentario...", class:'input', required:true}
+      .middle-height.black
+      #location
+        #map
+        #message.black.large-padding.white-text.text-center.medium
+          Prueba
+          
+      
+    %script{src:"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"}
+    %script
+      window.$ || document.write("<script src='js/vendor/jquery-1.12.0.min.js'><\/script>")
+    %script{src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyBs0WtKiZgMTRLXRyXTWb_7M04keQaLtSU"}
+    %script{src:"dist/app.js", type:"text/javascript"}
+   
+    
