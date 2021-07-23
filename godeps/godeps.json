@@ -1,0 +1,9 @@
+{
+  "ImportPath": "frontend-demo",
+  "GoVersion": "go1.5",
+  "GodepVersion": "V74",
+  "Packages": [
+    "./..."
+  ],
+  "Deps": []
+}
