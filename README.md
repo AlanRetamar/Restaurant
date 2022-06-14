@@ -1,2 +1,2 @@
 # Restaurant
-restaurant-by-alan.netlify.app
+[a restaurant-by-alan.netlify.app]restaurant-by-alan.netlify.app
